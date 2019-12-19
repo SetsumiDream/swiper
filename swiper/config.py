@@ -4,7 +4,7 @@ YZX_URL = 'https://open.ucpaas.com/ol/sms/sendsms'
 
 YZX_APPID = '9fa68f674b524c22a099a5d418cea79d'
 
-YZX_TOKEN = 'b1654bb7907**********42057c47653'
+YZX_TOKEN = 'b1654bb79072e65277d5842057c47653'
 
 YZX_SID = '248ed597c3184b53e37787d2698aad69'
 
