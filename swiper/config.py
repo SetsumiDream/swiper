@@ -18,3 +18,7 @@ YZX_PARAMS = {
  "param": None,
  "mobile": None,
 }
+
+QN_AK = 'uTCi4T1X2ozCDwQvzyEjCszNsATntmvKv-8ntFh0'
+QN_SK = 'utEyFUPxY1C_wy8O2k3zbSnUteDhwWbigAGP4VOP'
+QN_URL = ''

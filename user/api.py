@@ -1,17 +1,20 @@
+import os
+
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.core.cache import cache
+
+from lib.qiniu import upload_qiniu
+from swiper import settings
 
 from lib.sms import send_sms
 from common import errors
 from lib.http import render_json
 from common import keys
-
-
-
-# Create your views here.
 from user.forms import ProfileModelForm
+from user.logic import handle_upload
 from user.models import User, Profile
+from swiper import config
 
 
 def submit_phone(request):
@@ -73,6 +76,21 @@ def edit_profile(request):
         return render_json(data=profile.to_dict())
     return render_json(code=errors.PROFILE_ERROR, data=form.errors)
 
+
+def upload_avatar(request):
+    """上传个人头像照片"""
+    # 获取上传图片数据
+    avatar = request.FILES.get('avatar')
+    # 保存到指定的位置
+    # CDN content delivery network 内容分发网络
+    # print(type(avatar))
+    # print(avatar.name)
+    # print(avatar.size)
+    # print(avatar.content_type)
+    # 分块写入本地
+    user = request.user
+    handle_upload(user, avatar)
+    return render_json()
 
 
 
