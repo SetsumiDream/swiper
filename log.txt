@@ -1,0 +1,464 @@
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper
+$ git init
+Initialized empty Git repository in D:/Python_1906/1906/swiper/.git/
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ vi .gitignore
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        manage.py
+        swiper/
+        user/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        manage.py
+        swiper/
+        user/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git add .
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   manage.py
+        new file:   swiper/__init__.py
+        new file:   swiper/settings.py
+        new file:   swiper/urls.py
+        new file:   swiper/wsgi.py
+        new file:   user/__init__.py
+        new file:   user/admin.py
+        new file:   user/apps.py
+        new file:   user/migrations/0001_initial.py
+        new file:   user/migrations/__init__.py
+        new file:   user/models.py
+        new file:   user/tests.py
+        new file:   user/views.py
+
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git commit -m '创建了项目'
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Administrator@PC-201701011244.(none)')
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git config --global user.name "Setsumi0v0"
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git config --global user.email "646269520@qq.com"
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git config --global user.email"646269520@qq.com"
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git config --global user.name"Setsumi0v0"
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git config --global user.email"646269520@qq.com"
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ ssh-keygen -t rsa –C "646269520@qq.com"
+Too many arguments.
+usage: ssh-keygen [-q] [-b bits] [-C comment] [-f output_keyfile] [-m format]
+                  [-N new_passphrase] [-t dsa | ecdsa | ed25519 | rsa]
+       ssh-keygen -p [-f keyfile] [-m format] [-N new_passphrase]
+                   [-P old_passphrase]
+       ssh-keygen -i [-f input_keyfile] [-m key_format]
+       ssh-keygen -e [-f input_keyfile] [-m key_format]
+       ssh-keygen -y [-f input_keyfile]
+       ssh-keygen -c [-C comment] [-f keyfile] [-P passphrase]
+       ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
+       ssh-keygen -B [-f input_keyfile]
+       ssh-keygen -D pkcs11
+       ssh-keygen -F hostname [-lv] [-f known_hosts_file]
+       ssh-keygen -H [-f known_hosts_file]
+       ssh-keygen -R hostname [-f known_hosts_file]
+       ssh-keygen -r hostname [-g] [-f input_keyfile]
+       ssh-keygen -G output_file [-v] [-b bits] [-M memory] [-S start_point]
+       ssh-keygen -f input_file -T output_file [-v] [-a rounds] [-J num_lines]
+                  [-j start_line] [-K checkpt] [-W generator]
+       ssh-keygen -I certificate_identity -s ca_key [-hU] [-D pkcs11_provider]
+                  [-n principals] [-O option] [-V validity_interval]
+                  [-z serial_number] file ...
+       ssh-keygen -L [-f input_keyfile]
+       ssh-keygen -A [-f prefix_path]
+       ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
+                  file ...
+       ssh-keygen -Q -f krl_file file ...
+       ssh-keygen -Y check-novalidate -n namespace -s signature_file
+       ssh-keygen -Y sign -f key_file -n namespace file ...
+       ssh-keygen -Y verify -f allowed_signers_file -I signer_identity
+                -n namespace -s signature_file [-r revocation_file]
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ ssh-keygen -t rsa –C "646269520@qq.com"
+Too many arguments.
+usage: ssh-keygen [-q] [-b bits] [-C comment] [-f output_keyfile] [-m format]
+                  [-N new_passphrase] [-t dsa | ecdsa | ed25519 | rsa]
+       ssh-keygen -p [-f keyfile] [-m format] [-N new_passphrase]
+                   [-P old_passphrase]
+       ssh-keygen -i [-f input_keyfile] [-m key_format]
+       ssh-keygen -e [-f input_keyfile] [-m key_format]
+       ssh-keygen -y [-f input_keyfile]
+       ssh-keygen -c [-C comment] [-f keyfile] [-P passphrase]
+       ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
+       ssh-keygen -B [-f input_keyfile]
+       ssh-keygen -D pkcs11
+       ssh-keygen -F hostname [-lv] [-f known_hosts_file]
+       ssh-keygen -H [-f known_hosts_file]
+       ssh-keygen -R hostname [-f known_hosts_file]
+       ssh-keygen -r hostname [-g] [-f input_keyfile]
+       ssh-keygen -G output_file [-v] [-b bits] [-M memory] [-S start_point]
+       ssh-keygen -f input_file -T output_file [-v] [-a rounds] [-J num_lines]
+                  [-j start_line] [-K checkpt] [-W generator]
+       ssh-keygen -I certificate_identity -s ca_key [-hU] [-D pkcs11_provider]
+                  [-n principals] [-O option] [-V validity_interval]
+                  [-z serial_number] file ...
+       ssh-keygen -L [-f input_keyfile]
+       ssh-keygen -A [-f prefix_path]
+       ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
+                  file ...
+       ssh-keygen -Q -f krl_file file ...
+       ssh-keygen -Y check-novalidate -n namespace -s signature_file
+       ssh-keygen -Y sign -f key_file -n namespace file ...
+       ssh-keygen -Y verify -f allowed_signers_file -I signer_identity
+                -n namespace -s signature_file [-r revocation_file]
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ ssh-keygen -t rsa "646269520@qq.com"
+Too many arguments.
+usage: ssh-keygen [-q] [-b bits] [-C comment] [-f output_keyfile] [-m format]
+                  [-N new_passphrase] [-t dsa | ecdsa | ed25519 | rsa]
+       ssh-keygen -p [-f keyfile] [-m format] [-N new_passphrase]
+                   [-P old_passphrase]
+       ssh-keygen -i [-f input_keyfile] [-m key_format]
+       ssh-keygen -e [-f input_keyfile] [-m key_format]
+       ssh-keygen -y [-f input_keyfile]
+       ssh-keygen -c [-C comment] [-f keyfile] [-P passphrase]
+       ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
+       ssh-keygen -B [-f input_keyfile]
+       ssh-keygen -D pkcs11
+       ssh-keygen -F hostname [-lv] [-f known_hosts_file]
+       ssh-keygen -H [-f known_hosts_file]
+       ssh-keygen -R hostname [-f known_hosts_file]
+       ssh-keygen -r hostname [-g] [-f input_keyfile]
+       ssh-keygen -G output_file [-v] [-b bits] [-M memory] [-S start_point]
+       ssh-keygen -f input_file -T output_file [-v] [-a rounds] [-J num_lines]
+                  [-j start_line] [-K checkpt] [-W generator]
+       ssh-keygen -I certificate_identity -s ca_key [-hU] [-D pkcs11_provider]
+                  [-n principals] [-O option] [-V validity_interval]
+                  [-z serial_number] file ...
+       ssh-keygen -L [-f input_keyfile]
+       ssh-keygen -A [-f prefix_path]
+       ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
+                  file ...
+       ssh-keygen -Q -f krl_file file ...
+       ssh-keygen -Y check-novalidate -n namespace -s signature_file
+       ssh-keygen -Y sign -f key_file -n namespace file ...
+       ssh-keygen -Y verify -f allowed_signers_file -I signer_identity
+                -n namespace -s signature_file [-r revocation_file]
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ ssh-keygen -t rsa
+unknown key type rsaa
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Administrator/.ssh/id_rsa):
+Created directory '/c/Users/Administrator/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Administrator/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Administrator/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:7FJ/P8crhEyJNwFBUrvpi/E8KkGwS5iJ5nLybmQfazI Administrator@PC-201701011244
+The key's randomart image is:
++---[RSA 3072]----+
+|       .o=o      |
+|   .    . ..     |
+|. + o    .. o    |
+|.= o . . .o=     |
+|o . o   So+ o    |
+|o.+... o.. o .   |
+|.* . oo.... o  . |
+|  E +. .=... o. o|
+| o.+  .o.+.   o+.|
++----[SHA256]-----+
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git commit -m '创建了项目'
+[master (root-commit) de9fa9c] 创建了项目
+ 13 files changed, 255 insertions(+)
+ create mode 100644 manage.py
+ create mode 100644 swiper/__init__.py
+ create mode 100644 swiper/settings.py
+ create mode 100644 swiper/urls.py
+ create mode 100644 swiper/wsgi.py
+ create mode 100644 user/__init__.py
+ create mode 100644 user/admin.py
+ create mode 100644 user/apps.py
+ create mode 100644 user/migrations/0001_initial.py
+ create mode 100644 user/migrations/__init__.py
+ create mode 100644 user/models.py
+ create mode 100644 user/tests.py
+ create mode 100644 user/views.py
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git remote add origin git@github.com:SetsumiDream/swiper.git
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git push -u origin master
+The authenticity of host 'github.com (13.229.188.59)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,13.229.188.59' (RSA) to the list of known hosts.
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (16/16), 4.24 KiB | 1.06 MiB/s, done.
+Total 16 (delta 0), reused 0 (delta 0)
+To github.com:SetsumiDream/swiper.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (master)
+$ git checkout -b develop
+Switched to a new branch 'develop'
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (develop)
+$ git push -u origin develop
+Warning: Permanently added the RSA host key for IP address '52.74.223.119' to the list of known hosts.
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/SetsumiDream/swiper/pull/new/develop
+remote:
+To github.com:SetsumiDream/swiper.git
+ * [new branch]      develop -> develop
+Branch 'develop' set up to track remote branch 'develop' from 'origin'.
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (develop)
+$ git checkout -b feature-user
+Switched to a new branch 'feature-user'
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git push -u origin feature-user
+Total 0 (delta 0), reused 0 (delta 0)
+fatal: the remote end hung up unexpectedly
+fatal: the remote end hung up unexpectedly
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git push -u origin feature-user
+Everything up-to-date
+Branch 'feature-user' set up to track remote branch 'feature-user' from 'origin'.
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git status
+On branch feature-user
+Your branch is up to date with 'origin/feature-user'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   swiper/urls.py
+        deleted:    user/views.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        common/
+        lib/
+        swiper/__pycache__/
+        swiper/config.py
+        user/__pycache__/
+        user/api.py
+        user/migrations/__pycache__/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git status
+On branch feature-user
+Your branch is up to date with 'origin/feature-user'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   swiper/urls.py
+        deleted:    user/views.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        common/
+        lib/
+        swiper/config.py
+        user/api.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git add .
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git commit -m '完成发送短信验证功能'
+[feature-user 26833dd] 完成发送短信验证功能
+ 9 files changed, 93 insertions(+), 5 deletions(-)
+ create mode 100644 common/__init__.py
+ create mode 100644 common/errors.py
+ create mode 100644 lib/__init__.py
+ create mode 100644 lib/http.py
+ create mode 100644 lib/sms.py
+ create mode 100644 swiper/config.py
+ create mode 100644 user/api.py
+ delete mode 100644 user/views.py
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git push
+Warning: Permanently added the RSA host key for IP address '13.250.177.223' to the list of known hosts.
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (12/12), 2.18 KiB | 1.09 MiB/s, done.
+Total 12 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:SetsumiDream/swiper.git
+   de9fa9c..26833dd  feature-user -> feature-user
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git status
+On branch feature-user
+Your branch is up to date with 'origin/feature-user'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   swiper/config.py
+        modified:   user/api.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git add .
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git commit -m '完成发送短信验证功能'
+[feature-user 30b7e93] 完成发送短信验证功能
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git push
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 540 bytes | 540.00 KiB/s, done.
+Total 6 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), completed with 5 local objects.
+To github.com:SetsumiDream/swiper.git
+   26833dd..30b7e93  feature-user -> feature-user
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git status
+On branch feature-user
+Your branch is up to date with 'origin/feature-user'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   common/errors.py
+        modified:   lib/sms.py
+        modified:   swiper/urls.py
+        modified:   user/api.py
+        modified:   user/models.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        common/keys.py
+        lib/mixins.py
+        user/migrations/0002_profile.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git add .
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git commit -m '1.完成登录注册功能
+> 2.完成获取个人资料功能'
+[feature-user 6ead5fe] 1.完成登录注册功能 2.完成获取个人资料功能
+ 8 files changed, 147 insertions(+), 5 deletions(-)
+ create mode 100644 common/keys.py
+ create mode 100644 lib/mixins.py
+ create mode 100644 user/migrations/0002_profile.py
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ git push
+Enumerating objects: 26, done.
+Counting objects: 100% (26/26), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (15/15), 3.89 KiB | 398.00 KiB/s, done.
+Total 15 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To github.com:SetsumiDream/swiper.git
+   30b7e93..6ead5fe  feature-user -> feature-user
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$ ^C
+
+Administrator@PC-201701011244 MINGW64 /d/Python_1906/1906/swiper (feature-user)
+$
