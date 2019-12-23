@@ -19,6 +19,6 @@ YZX_PARAMS = {
  "mobile": None,
 }
 
-QN_AK = 'uTCi4T1X2ozCDwQvzyEjCszNsATntmvKv-8ntFh0'
-QN_SK = 'utEyFUPxY1C_wy8O2k3zbSnUteDhwWbigAGP4VOP'
-QN_URL = ''
+QN_AK = '7P8f5SqN6iLzjBHSmDeuWz-HXDwVHvRR_zraz8nw'
+QN_SK = 'c-J2qPNeP2fa48h1-MypzsovJC4fgaOUmcsxAo8P'
+QN_URL = 'http://q2t1itcaz.bkt.clouddn.com/'

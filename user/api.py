@@ -22,13 +22,16 @@ def submit_phone(request):
     phone = request.POST.get('phone')
     # 发送验证码
     print(phone)
-    status, msg = send_sms(phone)
 
-    if not status:
-        # return JsonResponse({'code': errors.SMS_ERROR, 'data': '短信发送失败'})
-        return render_json(code=errors.SMS_ERROR, data='短信发送失败')
-    # 发送成功
-    # return JsonResponse({'code': 0, 'data': None})
+    send_sms.delay(phone)
+
+    # status, msg = send_sms(phone)
+    #
+    # if not status:
+    #     # return JsonResponse({'code': errors.SMS_ERROR, 'data': '短信发送失败'})
+    #     return render_json(code=errors.SMS_ERROR, data='短信发送失败')
+    # # 发送成功
+    # # return JsonResponse({'code': 0, 'data': None})
     return render_json()
 
 
@@ -57,11 +60,11 @@ def submit_vcode(request):
 
 
 def get_profile(request):
-    uid = request.session.get('uid')
-    if not uid:
-        return render_json(code=errors.LOGIN_REQUIRED, data='请登录')
-    user = User.objects.get(id=uid)
-    return render_json(data=user.profile.to_dict())
+    # uid = request.session.get('uid')
+    # if not uid:
+    #     return render_json(code=errors.LOGIN_REQUIRED, data='请登录')
+    # user = User.objects.get(id=uid)
+    return render_json(data=request.user.profile.to_dict())
 
 
 def edit_profile(request):
@@ -89,7 +92,7 @@ def upload_avatar(request):
     # print(avatar.content_type)
     # 分块写入本地
     user = request.user
-    handle_upload(user, avatar)
+    handle_upload.delay(user, avatar)
     return render_json()
 
 
