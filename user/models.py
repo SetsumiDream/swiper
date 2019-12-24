@@ -41,12 +41,14 @@ class User(models.Model):
         # 根据用户的id，找到profile
         # 第一次来访问，就从数据库中获取
         # 否则从缓存取
-        key = keys.PROFILE_KEY % self.id
-        profile = cache.get(key)
-        if not profile:
-            profile, _ = Profile.objects.get_or_create(id=self.id)
-            cache.set(key, profile, timeout=86400)
-        return profile
+
+        if not hasattr(self, '_profile'):
+            key = keys.PROFILE_KEY % self.id
+            self._profile = cache.get(key)
+            if not self._profile:
+                self._profile, _ = Profile.objects.get_or_create(id=self.id)
+                cache.set(key, self._profile, timeout=86400)
+        return self._profile
 
     def to_dict(self):
         return {

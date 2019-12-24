@@ -22,3 +22,6 @@ YZX_PARAMS = {
 QN_AK = '7P8f5SqN6iLzjBHSmDeuWz-HXDwVHvRR_zraz8nw'
 QN_SK = 'c-J2qPNeP2fa48h1-MypzsovJC4fgaOUmcsxAo8P'
 QN_URL = 'http://q2t1itcaz.bkt.clouddn.com/'
+
+# 最大反悔次数
+MAX_REWIND = 3
