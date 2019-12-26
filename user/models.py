@@ -6,6 +6,7 @@ from django.core.cache import cache
 from common import keys
 from lib.mixins import ModelMixin
 # Create your models here.
+from vip.models import Vip
 
 
 class User(models.Model):
@@ -23,6 +24,20 @@ class User(models.Model):
     avatar = models.CharField(max_length=256, verbose_name='个人形象')
     location = models.CharField(max_length=128, verbose_name='常居地')
 
+    vip_id = models.IntegerField(verbose_name='用户所属的vip的id', default=1)
+
+    @property
+    def vip(self):
+        """先从缓存获取"""
+        if not hasattr(self, '_vip'):
+            key = keys.VIP_KEY % self.id
+            self._vip = cache.get(key)
+            if not self._vip:
+                self._vip = Vip.get(id=self.vip_id)
+                cache.set(key, self._vip, 86400*14)
+            return self._vip
+
+
     class Meta:
         db_table = 'user'
 
@@ -34,7 +49,7 @@ class User(models.Model):
         birthday = datetime.datetime(year=self.birth_year, month=self.birth_month,
                                 day=self.birth_day)
         now = datetime.datetime.now()
-        return (now - birthday).days // 265
+        return (now - birthday).days // 365
 
     @property
     def profile(self):
@@ -46,7 +61,7 @@ class User(models.Model):
             key = keys.PROFILE_KEY % self.id
             self._profile = cache.get(key)
             if not self._profile:
-                self._profile, _ = Profile.objects.get_or_create(id=self.id)
+                self._profile, _ = Profile.get_or_create(id=self.id)
                 cache.set(key, self._profile, timeout=86400)
         return self._profile
 

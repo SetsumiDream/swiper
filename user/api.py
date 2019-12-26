@@ -1,11 +1,11 @@
 import os
+import logging
+import random
 
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.core.cache import cache
 
-from lib.qiniu import upload_qiniu
-from swiper import settings
 
 from lib.sms import send_sms
 from common import errors
@@ -14,7 +14,9 @@ from common import keys
 from user.forms import ProfileModelForm
 from user.logic import handle_upload
 from user.models import User, Profile
-from swiper import config
+
+logger_info = logging.getLogger('inf')
+logger_error = logging.getLogger('inf')
 
 
 def submit_phone(request):
@@ -47,11 +49,11 @@ def submit_vcode(request):
     if vcode == cache_vcode:
         # 验证码正确
         # try:
-        #     user = User.objects.get(phonenum=phone)
+        #     user = User.get(phonenum=phone)
         # except User.DoesNotExist:
         #     # 说明是注册
         #     user = User.objects.create(phonenum=phone, nickname=phone)
-        user, _ = User.objects.get_or_create(phonenum=phone, defaults={'nickname': phone})
+        user, _ = User.get_or_create(phonenum=phone, defaults={'nickname': phone})
         request.session['uid'] = user.id
         return render_json(data=user.to_dict())
     else:
@@ -63,7 +65,8 @@ def get_profile(request):
     # uid = request.session.get('uid')
     # if not uid:
     #     return render_json(code=errors.LOGIN_REQUIRED, data='请登录')
-    # user = User.objects.get(id=uid)
+    # user = User.get(id=uid)
+    # print(request.user)
     return render_json(data=request.user.profile.to_dict())
 
 
@@ -76,9 +79,12 @@ def edit_profile(request):
         uid = request.session.get('uid')
         profile.id = uid
         profile.save()
-        cache.set(keys.PROFILE_KEY % uid, profile, 86400 * 14)
+        cache.set(keys.PROFILE_KEY % uid, profile, 86400 * 14 * random.random())
+
+        logger_info.info(f'{request.user.nickname}modify profile success')
         return render_json(data=profile.to_dict())
     else:
+        logger_error.error(f'{request.user.nickname}modify profile error')
         raise errors.ProfileError
 
 

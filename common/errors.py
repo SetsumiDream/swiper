@@ -22,6 +22,7 @@ ProfileError = gen_logic_err('ProfileError', code=1003, data='资料不合法')
 ExceedMaximumRewind = gen_logic_err('ExceedMaximumRewind', code=1004, data='超过反悔次数')
 NoRecord = gen_logic_err('NoRecord', code=1005, data='资料不合法')
 
+PermissionDenied = gen_logic_err('PermissionDenied', code=1006, data='权限不足')
 
 
 

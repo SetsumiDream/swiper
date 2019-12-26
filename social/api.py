@@ -9,6 +9,8 @@ from social import logic
 from social.models import Swiped, Friend
 from swiper import config
 from user.models import User
+from vip.logic import need_perm
+from lib.cache import rds
 
 
 def get_recd_list(request):
@@ -25,6 +27,8 @@ def like(request):
     user = request.user
     sid = int(request.POST.get('sid'))
     flag = logic.like(user.id, sid)
+
+    rds.zincrby(config.HOT_RANK, config.LIKE_SCORE, keys.HOT_RANK_KEY % sid)
     return render_json(data={'match': flag})
 
 
@@ -32,16 +36,20 @@ def dislike(request):
     user = request.user
     sid = int(request.POST.get('sid'))
     flag = logic.dislike(user.id, sid)
+    rds.zincrby(config.HOT_RANK, config.DISLIKE_SCORE, keys.HOT_RANK_KEY % sid)
     return render_json(data={'unmatch': flag})
 
 
+@need_perm('superlike')
 def superlike(request):
     user = request.user
     sid = int(request.POST.get('sid'))
     flag = logic.superlike(user.id, sid)
+    rds.zincrby(config.HOT_RANK, config.SUPERLIKE_SCORE, keys.HOT_RANK_KEY % sid)
     return render_json(data={'match': flag})
 
 
+@need_perm('rewind')
 def rewind(request):
     """
     每天允许反悔三次，把次数记录redis
@@ -58,4 +66,9 @@ def show_friends(request):
     # 1 2
     user = request.user
     data = logic.show_friend(user)
+    return render_json(data=data)
+
+
+def get_top_n(request):
+    data = logic.get_top_n()
     return render_json(data=data)

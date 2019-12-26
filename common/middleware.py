@@ -22,7 +22,8 @@ class AuthMiddleware(MiddlewareMixin):
         if not uid:
             return render_json(code=errors.LOGIN_REQUIRED, data='请登录')
         # 如果登录了， 就把user写入request
-        user = User.objects.get(id=uid)
+        print(User.get(id=uid))
+        user = User.get(id=uid)
         request.user = user
 
 

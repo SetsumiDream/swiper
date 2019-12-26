@@ -25,3 +25,9 @@ QN_URL = 'http://q2t1itcaz.bkt.clouddn.com/'
 
 # 最大反悔次数
 MAX_REWIND = 3
+
+HOT_RANK = 'Hot-Rank'
+LIKE_SCORE = 5
+DISLIKE_SCORE = -5
+SUPERLIKE_SCORE = 7
+TOP_N = 10
